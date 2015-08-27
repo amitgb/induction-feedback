@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>ELITE Induction Feedback</title>
+
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> 
+
+        <style>
+            /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+            .star-rating {
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+            }
+            .star-rating .star {
+                padding: 1px;
+                color: #ddd;
+                font-size: 20px;
+                text-shadow: .05em .05em #aaa;
+                list-style-type: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .star-rating .star.filled {
+                color: #fd0;
+            }
+            .star-rating.readonly .star.filled {
+                color: #666;
+            }
+
+            th, td { padding: 4px; }
+            table, th, td {
+                border: 1px solid #ddd;
+                margin-top: 25px;
+                table-layout: fixed;
+                width: 100%;
+                text-align: center
+            }
+            </style>
+
+
+            <script src="js/prefixfree.min.js"></script>
+
+
+        </head>
+
+        <body>
+            <h1 class="container-fluid">ELITE Induction Feedback</h1>
+            <div ng-app="app" ng-controller="RatingController as rating" class="container-fluid">
+                <h2>Program Rating</h2>
+                <div>
+                    <table  >
+                        <caption  style="background: #ff0033; color:white; text-align: center " ><strong>{{programAndCourseDesign.title}}</strong></caption>
+
+                        <tr>
+                            <td>{{ programAndCourseDesign.feedbackParam1}}</td>
+                            <td><star-rating ng-model="programAndCourseDesign.rating1"></star-rating></td>
+                        </tr>
+                        <tr>
+                            <td>{{ programAndCourseDesign.feedbackParam2}}</td>
+                            <td><star-rating ng-model="programAndCourseDesign.rating2"></star-rating></td>
+                        </tr>
+                        <tr>
+                            <td>{{ programAndCourseDesign.feedbackParam3}}</td>
+                            <td><star-rating ng-model="programAndCourseDesign.rating3"></star-rating></td>                
+                        </tr>
+                        <tr>
+                            <td>{{ programAndCourseDesign.feedbackParam4}}</td>
+                            <td><star-rating ng-model="programAndCourseDesign.rating4"></star-rating></td>                
+                        </tr>
+                        <tr>
+                            <td>{{ programAndCourseDesign.feedbackParam5}}</td>
+                            <td><star-rating ng-model="programAndCourseDesign.rating5"></star-rating></td>                
+                        </tr>
+                        
+                    </table>
+                </div>  
+                
+                <div class="form-group">
+                    <label>What did you like about ELITE Induction?</label>
+                    <input id="myLargeTextboxId" class="form-control" ng-model="programAndCourseDesign.likeAboutProgram" >
+                </div>
+
+                <div class="form-group">
+                    <label>Any improvement suggestions in ELITE Induction?</label>
+                    <input id="myLargeTextboxId" class="form-control" ng-model="programAndCourseDesign.improvementInProgram">
+                </div>           
+                <div style="text-align: center">
+                    <input class="btn btn-primary"  type="submit" value="Submit" ng-click="onClickSubmit()">
+                </div>
+                
+                <!--
+                <div>
+                    <table ng-repeat="model in trainingFacility" >
+
+                        <caption  style="background: #ff0033; color:white; text-align: center " ><strong>{{model.title}}</strong></caption>
+
+                        <tr>
+                            <td>{{ model.feedbackParam1}}</td>
+                            <td><star-rating ng-model="model.rating1"></star-rating></td>
+                        </tr>
+                        <tr>
+                            <td>{{ model.feedbackParam2}}</td>
+                            <td><star-rating ng-model="model.rating2"></star-rating></td>
+                        </tr>
+                    </table>
+                </div>   
+                -->
+
+                <!--
+                <h2>Facilitator Feedback</h2>
+                <div>
+                    <table ng-repeat="model in facilitatorList" >
+
+                        <caption  style="background: #ff0033; color:white; text-align: center " ><strong>{{model.presenter}}</strong></caption>
+
+                        <tr>
+                            <td>{{ model.feedbackParam1}}</td>
+                            <td><star-rating ng-model="model.rating1"></star-rating></td>
+                        </tr>
+                        <tr>
+                            <td>{{ model.feedbackParam2}}</td>
+                            <td><star-rating ng-model="model.rating2"></star-rating></td>
+                        </tr>
+                        <tr>
+                            <td>{{ model.feedbackParam3}}</td>
+                            <td><star-rating ng-model="model.rating3"></star-rating></td>                
+                        </tr>
+                    </table>
+                </div>  
+                -->
+
+            </div>
+
+
+
+            <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+
+            <script src="js/index.js"></script>
+
+
+
+
+        </body>
+    </html>
